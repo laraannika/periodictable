@@ -1,67 +1,81 @@
+/* Höhe der Zeilen */
 tr{
     height:25px;
 }
 
+/* wählt alle Felder und nochmal 2 leere explizit aus, Wichtigkeit größer als td:empty */
 td,
 tr:nth-child(n+6):nth-child(-n+7) td:nth-child(3){
     border:1px solid black;
     border-radius: 3px;
     text-align: center;
-    width:25px;
+    min-width:25px;
     font-size:12px;
 }
 
+/* alle leeren Felder von der border befreien */
 td:empty{
     border:none;
 }
 
-tr:first-of-type td:first-child,
+/* erste Zeile, erste Spalte + 2x Zeile mit von bis Spalte + Zeile x, Spalte y */
+tr:first-of-type td:first-of-type,
 tr:nth-child(2) td:nth-child(n+14):nth-child(-n+16),
 tr:nth-child(3) td:nth-child(n+15):nth-child(-n+16),
 tr:nth-child(4) td:nth-child(16){
     background-color:yellow;
 }
 
+/* Zeile ab x abwärts gezählt, letzte Spalte + Zeile x, Spalte y */
 tr:nth-child(-n+6) td:last-child,
 tr:nth-child(7) td:nth-child(16){
     background-color: palevioletred;
 }
 
+/* Zeile ab x bis y, letzte Spalte + Zeile x, Spalte y */
 tr:nth-child(n+2):nth-child(-n+7) td:first-child,
 tr:nth-child(7) td:nth-child(17){
     background-color: blueviolet;
 }
 
+/* Zeile ab x bis y + Zeile x, letzte Spalte */
 tr:nth-child(n+2):nth-child(-n+7) td:nth-child(2),
 tr:nth-child(7) td:last-child{
     background-color: burlywood;
 }
 
+/* 2x Zeile ab x bis y, Spalte ab x-y */
 tr:nth-child(n+4):nth-child(-n+5) td:nth-child(n+3):nth-child(-n+12),
 tr:nth-child(n+6):nth-child(-n+7) td:nth-child(n+4):nth-child(-n+12){
     background-color: darkseagreen;
 }
-tr:nth-child(8) td:not(:empty),
+
+/* vorletzte Zeile, alle Spalten, die nicht leer sind + Zeile 6, Spalte x */
+tr:nth-last-child(2) td:not(:empty),
 tr:nth-child(6) td:nth-child(3){
     background-color: lightblue;
 }
 
-tr:nth-child(9) td:not(:empty),
+/* letzte Zeile, alle Spalten, die nicht leer sind + Zeile x, Spalte y */
+tr:last-of-type td:not(:empty),
 tr:nth-child(7) td:nth-child(3){
     background-color: teal;
 }
 
+/* 2x Zeile von bis, Spalte x + Zeile x, Spalte y */
 tr:nth-child(n+3):nth-child(-n+7) td:nth-child(13),
 tr:nth-child(n+5):nth-child(-n+7) td:nth-child(14),
 tr:nth-child(6) td:nth-child(15){
     background-color: pink;
 }
 
+/* Zeile x, Spalte y + Zeile von bis, Spalte x */
 tr:nth-child(7) td:nth-child(15),
 tr:nth-child(n+2):nth-child(-n+6) td:nth-child(17){
     background-color: peru;
 }
 
+/* 3x Zeile x, Spalte y + 2x Zeile x, Spalte von bis*/
 tr:nth-child(2) td:nth-child(13),
 tr:nth-child(3) td:nth-child(14),
 tr:nth-child(4) td:nth-child(n+14):nth-child(-n+15),
@@ -70,11 +84,13 @@ tr:nth-child(6) td:nth-child(16){
     background-color: lightcoral;
 }
 
+/* alle gefärbten Felder werden größer und durchsichtig */
 td:hover{
     transform: scale(2);
     opacity: 0.8;
 }
 
+/* die beiden gefärbten, aber leeren Felder nicht */
 td:empty:hover{
     transform: none;
     opacity: none;
