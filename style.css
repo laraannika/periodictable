@@ -2,9 +2,11 @@ tr{
     height:25px;
 }
 
-td{
+td,
+tr:nth-child(6) td:nth-child(3),
+tr:nth-child(7) td:nth-child(3){
     border:1px solid black;
-    border-radius: 5px;
+    border-radius: 3px;
     text-align: center;
     width:25px;
     font-size:12px;
@@ -14,3 +16,67 @@ td:empty{
     border:none;
 }
 
+tr:first-of-type td:first-child,
+tr:nth-child(2) td:nth-child(n+14):nth-child(-n+16),
+tr:nth-child(3) td:nth-child(n+15):nth-child(-n+16),
+tr:nth-child(4) td:nth-child(16){
+    background-color:yellow;
+}
+
+tr:nth-child(n+1):nth-child(-n+6) td:last-child,
+tr:nth-child(7) td:nth-child(16){
+    background-color: palevioletred;
+}
+
+tr:nth-child(n+2):nth-child(-n+7) td:first-child,
+tr:nth-child(7) td:nth-child(17){
+    background-color: blueviolet;
+}
+
+tr:nth-child(n+2):nth-child(-n+7) td:nth-child(2),
+tr:nth-child(7) td:last-child{
+    background-color: burlywood;
+}
+
+tr:nth-child(n+4):nth-child(-n+5) td:nth-child(n+3):nth-child(-n+12),
+tr:nth-child(n+6):nth-child(-n+7) td:nth-child(n+4):nth-child(-n+12){
+    background-color: darkseagreen;
+}
+tr:nth-child(8) td:not(:empty),
+tr:nth-child(6) td:nth-child(3){
+    background-color: lightblue;
+}
+
+tr:nth-child(9) td:not(:empty),
+tr:nth-child(7) td:nth-child(3){
+    background-color: teal;
+}
+
+tr:nth-child(n+3):nth-child(-n+7) td:nth-child(13),
+tr:nth-child(n+5):nth-child(-n+7) td:nth-child(14),
+tr:nth-child(6) td:nth-child(15){
+    background-color: pink;
+}
+
+tr:nth-child(7) td:nth-child(15),
+tr:nth-child(n+2):nth-child(-n+6) td:nth-child(17){
+    background-color: peru;
+}
+
+tr:nth-child(2) td:nth-child(13),
+tr:nth-child(3) td:nth-child(14),
+tr:nth-child(4) td:nth-child(n+14):nth-child(-n+15),
+tr:nth-child(5) td:nth-child(n+15):nth-child(-n+16),
+tr:nth-child(6) td:nth-child(16){
+    background-color: lightcoral;
+}
+
+td:hover{
+    transform: scale(2);
+    opacity: 0.8;
+}
+
+td:empty:hover{
+    transform: none;
+    opacity: none;
+}
