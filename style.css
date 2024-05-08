@@ -1,0 +1,16 @@
+tr{
+    height:25px;
+}
+
+td{
+    border:1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width:25px;
+    font-size:12px;
+}
+
+td:empty{
+    border:none;
+}
+
