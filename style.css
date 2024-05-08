@@ -84,14 +84,8 @@ tr:nth-child(6) td:nth-child(16){
     background-color: lightcoral;
 }
 
-/* alle gefärbten Felder werden größer und durchsichtig */
-td:hover{
+/* alle gefärbten Felder werden größer und durchsichtig ABER die beiden gefärbten, aber leeren Felder nicht */
+td:not(:empty):hover{
     transform: scale(2);
     opacity: 0.8;
-}
-
-/* die beiden gefärbten, aber leeren Felder nicht */
-td:empty:hover{
-    transform: none;
-    opacity: none;
 }
